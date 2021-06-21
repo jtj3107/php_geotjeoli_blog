@@ -28,14 +28,16 @@ $loginedMember = $_REQUEST['App__loginedMember'];
   <link rel="stylesheet" href="/resource/common.css">
 
   <?php if ( $envCode == 'prod' ) { ?>
+    <meta name="google-site-verification" content="p1epE6yQz2jDOYGCDeuqvKVuI3sxmNSY2mTAcPIYukg" />
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94LNZ8CK0K"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKQ4LFR9ZQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-94LNZ8CK0K');
+    gtag('config', 'G-EKQ4LFR9ZQ');
   </script>
   <?php } ?>
 

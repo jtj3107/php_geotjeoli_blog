@@ -1,0 +1,17 @@
+{
+    "name": "jtj3107/php_blog_2021",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/app"
+        }
+    },
+    "authors": [
+        {
+            "name": "jtj3107",
+            "email": "jtj3926@gmail.com"
+        }
+    ],
+    "require": {}
+}

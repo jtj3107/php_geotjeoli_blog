@@ -1,13 +1,14 @@
 <?php
-require_once __DIR__ . "/../webInit.php";
+namespace App;
 
-$REQUEST_URI = $_SERVER['REQUEST_URI'];
+require_once __DIR__ . "/../vender/autoload.php";
 
-if ( $REQUEST_URI == '/' ) {
-  jsLocationReplaceExit("/usr/article/list");
-}
+// 어플리케이션
+$application = Application::getInstance();
 
-list($action) = explode('?', $REQUEST_URI);
-$action = substr($action, 1);
+date_default_timezone_set('Asia/Seoul');
+session_start();
 
-App__run($action);
+$dbConn = $application->getDbConnectionByEnv();
+
+$application->runByRequestUri($_SERVER['REQUEST_URI']);

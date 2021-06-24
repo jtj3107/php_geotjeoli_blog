@@ -1,10 +1,24 @@
 <?php
-class APP__MemberService {
-  private APP__MemberRepository $memberRepository;
+
+namespace App\service;
+
+use App\Repository\MemberRepository;
+
+class MemberService {
+  private MemberRepository $memberRepository;
+
+  public static function getInstance(): MemberService{
+    static $instance;
+
+    if($instance == null){
+      $instance = new MemberService();
+    }
+
+    return $instance;
+  }
 
   public function __construct() {
-    global $App__memberRepository;
-    $this->memberRepository = $App__memberRepository;
+    $this->memberRepository = MemberRepository::getInstance();
   }
 
   public function getForPrintMemberByLoginIdAndLoginPw(string $loginId, string $loginPw): array|null {

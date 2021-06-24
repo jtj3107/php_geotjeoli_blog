@@ -1,14 +1,21 @@
 <?php
-class APP__UsrArticleController {
-  private APP__ArticleService $articleService;
 
-  public function __construct() {
-    global $App__articleService;
-    $this->articleService = $App__articleService;
-  }
+namespace App\Controller;
+
+use App\Controller\Controller;
+use App\Service\ArticleService;
+
+class UsrArticleController extends Controller {
+  private ArticleService $articleService;
+
+  public function __construct()
+    {
+        parent::__construct();
+        $this->articleService = ArticleService::getInstance();
+    }
 
   public function actionShowWrite() {
-    require_once App__getViewPath("usr/article/write");
+    require_once getViewPath("usr/article/write");
   }
 
   public function actionDoModify() {
